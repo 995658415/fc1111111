@@ -7,8 +7,8 @@ import requests
 class DingRobot:
     def __init__(self):
         self.allure = "http://admin:Aa123456!@47.93.114.83:9000/job/api123123/allure/widgets/suites.json"
-        self.ding = 'https://oapi.dingtalk.com/robot/send?access_token=0bb61434d5d1caadbd63d10ba8108bc32227bab03b6e0df7f1e3ab329649248b'
-
+        self.ding = "https://oapi.dingtalk.com/robot/send?access_token=" \
+                    "975e532346e100e15cb606ee1332b64cdfff5e9c3a868e48390fc56740d30668"
         self.error = self.get_allure_error()
 
     def get_allure_error(self):
@@ -34,4 +34,4 @@ class DingRobot:
 
 
 if __name__ == '__main__':
-    print(DingRobot().get_allure_error())
+    DingRobot().send_report()
