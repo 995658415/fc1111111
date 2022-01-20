@@ -6,8 +6,9 @@ import requests
 
 class DingRobot:
     def __init__(self):
-        self.allure = "http://admin:Aa123456!@47.93.114.83:9000/job/AI/allure/widgets/suites.json"
-        self.ding = "https://oapi.dingtalk.com/robot/send?access_token=975e532346e100e15cb606ee1332b64cdfff5e9c3a868e48390fc56740d30668"
+        self.allure = "http://admin:Aa123456!@47.93.114.83:9000/job/api123123/allure/widgets/suites.json"
+        self.ding = 'https://oapi.dingtalk.com/robot/send?access_token=0bb61434d5d1caadbd63d10ba8108bc32227bab03b6e0df7f1e3ab329649248b'
+
         self.error = self.get_allure_error()
 
     def get_allure_error(self):
@@ -24,10 +25,10 @@ class DingRobot:
                     "text": "账号admin,密码Aa123456!",
                     "title": "业务报警" + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                     "picUrl": "",
-                    "messageUrl": "http://admin:Aa123456!@http://47.93.114.83:9000/job/AI/allure/"
+                    "messageUrl": "http://admin:Aa123456!@http://47.93.114.83:9000/job/api123123/allure/"
                 }
             }
-            requests.post(self.ding, headers=headers, data=json.dumps(content))
+            response = requests.post(self.ding, headers=headers, data=json.dumps(content))
         else:
             print('无报错')
 
